@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM<br>Is<br>Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street<br>Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -49,7 +49,7 @@ document.querySelector('nav a:nth-child(5)').textContent = siteContent['nav']['n
 document.querySelector('nav a:nth-child(6)').textContent = siteContent['nav']['nav-item-6']
 document.querySelector('#logo-img').setAttribute('src', 'img/logo.png')
 
-document.querySelector('.cta h1').textContent = siteContent['cta']['h1']
+document.querySelector('.cta h1').innerHTML = siteContent['cta']['h1']
 document.querySelector('.cta button').textContent = siteContent['cta']['button']
 document.querySelector('#cta-img').setAttribute('src', siteContent['cta']['img-src'])
 
@@ -66,7 +66,7 @@ document.querySelector('.main-content .bottom-content div:nth-child(3) h4').text
 document.querySelector('.main-content .bottom-content div:nth-child(3) p').textContent = siteContent['main-content']['vision-content']
 
 document.querySelector('.contact h4').textContent = siteContent['contact']['contact-h4']
-document.querySelector('.contact p:nth-of-type(1)').textContent = siteContent['contact']['address']
+document.querySelector('.contact p:nth-of-type(1)').innerHTML = siteContent['contact']['address']
 document.querySelector('.contact p:nth-of-type(2)').textContent = siteContent['contact']['phone']
 document.querySelector('.contact p:nth-of-type(3)').textContent = siteContent['contact']['email']
 
