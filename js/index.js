@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM<br>Is<br>Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street<br>Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -38,5 +38,46 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+// let logo = document.getElementById("logo-img");
+// logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+document.querySelector('nav a').textContent = siteContent['nav']['nav-item-1']
+document.querySelector('nav a:nth-child(2)').textContent = siteContent['nav']['nav-item-2']
+document.querySelector('nav a:nth-child(3)').textContent = siteContent['nav']['nav-item-3']
+document.querySelector('nav a:nth-child(4)').textContent = siteContent['nav']['nav-item-4']
+document.querySelector('nav a:nth-child(5)').textContent = siteContent['nav']['nav-item-5']
+document.querySelector('nav a:nth-child(6)').textContent = siteContent['nav']['nav-item-6']
+document.querySelector('#logo-img').setAttribute('src', 'img/logo.png')
+
+document.querySelector('.cta h1').innerHTML = siteContent['cta']['h1']
+document.querySelector('.cta button').textContent = siteContent['cta']['button']
+document.querySelector('#cta-img').setAttribute('src', siteContent['cta']['img-src'])
+
+document.querySelector('.main-content .top-content div:nth-child(1) h4').textContent = siteContent['main-content']['features-h4']
+document.querySelector('.main-content .top-content div:nth-child(1) p').textContent = siteContent['main-content']['features-content']
+document.querySelector('.main-content .top-content div:nth-child(2) h4').textContent = siteContent['main-content']['about-h4']
+document.querySelector('.main-content .top-content div:nth-child(2) p').textContent = siteContent['main-content']['about-content']
+document.querySelector('#middle-img').setAttribute('src', siteContent['main-content']['middle-img-src'])
+document.querySelector('.main-content .bottom-content div:nth-child(1) h4').textContent = siteContent['main-content']['services-h4']
+document.querySelector('.main-content .bottom-content div:nth-child(1) p').textContent = siteContent['main-content']['services-content']
+document.querySelector('.main-content .bottom-content div:nth-child(2) h4').textContent = siteContent['main-content']['product-h4']
+document.querySelector('.main-content .bottom-content div:nth-child(2) p').textContent = siteContent['main-content']['product-content']
+document.querySelector('.main-content .bottom-content div:nth-child(3) h4').textContent = siteContent['main-content']['vision-h4']
+document.querySelector('.main-content .bottom-content div:nth-child(3) p').textContent = siteContent['main-content']['vision-content']
+
+document.querySelector('.contact h4').textContent = siteContent['contact']['contact-h4']
+document.querySelector('.contact p:nth-of-type(1)').innerHTML = siteContent['contact']['address']
+document.querySelector('.contact p:nth-of-type(2)').textContent = siteContent['contact']['phone']
+document.querySelector('.contact p:nth-of-type(3)').textContent = siteContent['contact']['email']
+
+document.querySelector('footer p').textContent = siteContent['footer']['copyright']
+
+const lastNav = document.createElement('a')
+lastNav.textContent = 'whatever-you-want'
+const firstNav = document.createElement('a')
+firstNav.textContent = 'E'
+
+document.querySelector('nav').appendChild(lastNav)
+document.querySelector('nav').prepend(firstNav)
+
+document.querySelectorAll('nav a').forEach(element => element.style.color = 'green')
