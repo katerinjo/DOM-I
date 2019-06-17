@@ -47,4 +47,4 @@ document.querySelector('nav a:nth-child(3)').textContent = siteContent['nav']['n
 document.querySelector('nav a:nth-child(4)').textContent = siteContent['nav']['nav-item-4']
 document.querySelector('nav a:nth-child(5)').textContent = siteContent['nav']['nav-item-5']
 document.querySelector('nav a:nth-child(6)').textContent = siteContent['nav']['nav-item-6']
-document.querySelector('header img').setAttribute('src', 'img/logo.png')
+document.querySelector('#logo-img').setAttribute('src', 'img/logo.png')
