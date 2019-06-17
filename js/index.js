@@ -71,3 +71,5 @@ document.querySelector('.contact p:nth-of-type(2)').textContent = siteContent['c
 document.querySelector('.contact p:nth-of-type(3)').textContent = siteContent['contact']['email']
 
 document.querySelector('footer p').textContent = siteContent['footer']['copyright']
+
+document.querySelectorAll('nav a').forEach(element => element.style.color = 'green')
