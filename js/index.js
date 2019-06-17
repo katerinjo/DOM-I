@@ -48,3 +48,7 @@ document.querySelector('nav a:nth-child(4)').textContent = siteContent['nav']['n
 document.querySelector('nav a:nth-child(5)').textContent = siteContent['nav']['nav-item-5']
 document.querySelector('nav a:nth-child(6)').textContent = siteContent['nav']['nav-item-6']
 document.querySelector('#logo-img').setAttribute('src', 'img/logo.png')
+
+document.querySelector('.cta h1').textContent = siteContent['cta']['h1']
+document.querySelector('.cta button').textContent = siteContent['cta']['button']
+document.querySelector('#cta-img').setAttribute('src', siteContent['cta']['img-src'])
