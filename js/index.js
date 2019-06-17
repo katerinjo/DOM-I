@@ -69,3 +69,5 @@ document.querySelector('.contact h4').textContent = siteContent['contact']['cont
 document.querySelector('.contact p:nth-of-type(1)').textContent = siteContent['contact']['address']
 document.querySelector('.contact p:nth-of-type(2)').textContent = siteContent['contact']['phone']
 document.querySelector('.contact p:nth-of-type(3)').textContent = siteContent['contact']['email']
+
+document.querySelector('footer p').textContent = siteContent['footer']['copyright']
