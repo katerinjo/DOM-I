@@ -72,4 +72,12 @@ document.querySelector('.contact p:nth-of-type(3)').textContent = siteContent['c
 
 document.querySelector('footer p').textContent = siteContent['footer']['copyright']
 
+const lastNav = document.createElement('a')
+lastNav.textContent = 'whatever-you-want'
+const firstNav = document.createElement('a')
+firstNav.textContent = 'E'
+
+document.querySelector('nav').appendChild(lastNav)
+document.querySelector('nav').prepend(firstNav)
+
 document.querySelectorAll('nav a').forEach(element => element.style.color = 'green')
