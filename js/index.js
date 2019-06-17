@@ -64,3 +64,8 @@ document.querySelector('.main-content .bottom-content div:nth-child(2) h4').text
 document.querySelector('.main-content .bottom-content div:nth-child(2) p').textContent = siteContent['main-content']['product-content']
 document.querySelector('.main-content .bottom-content div:nth-child(3) h4').textContent = siteContent['main-content']['vision-h4']
 document.querySelector('.main-content .bottom-content div:nth-child(3) p').textContent = siteContent['main-content']['vision-content']
+
+document.querySelector('.contact h4').textContent = siteContent['contact']['contact-h4']
+document.querySelector('.contact p:nth-of-type(1)').textContent = siteContent['contact']['address']
+document.querySelector('.contact p:nth-of-type(2)').textContent = siteContent['contact']['phone']
+document.querySelector('.contact p:nth-of-type(3)').textContent = siteContent['contact']['email']
