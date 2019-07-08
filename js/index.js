@@ -47,6 +47,11 @@ function setText(selector, content) {
   document.querySelector(selector).textContent = content
 }
 
+function setTextAll(selectFun, section, omit = []) {
+  R.forEachObjIndexed((val, key) => setText(selectFun(key), val),
+    R.omit(omit, siteContent[section]))
+}
+
 // function findRecur(objectTree, keyRegex) {
 //   console.log(typeof objectTree)
 //   const base = Object.keys(objectTree)
@@ -58,10 +63,6 @@ function setText(selector, content) {
 //   return base.concat(...rest)
 // }
 
-R.forEachObjIndexed((val, key) => setText(`nav a:nth-child(${key[key.length - 1]})`, val),
-  R.omit(['img-src'], siteContent['nav']))
 
-// document.querySelector('.cta h1').innerHTML = siteContent['cta']['h1']
-// document.querySelector('.cta button').textContent = siteContent['cta']['button']
-R.forEachObjIndexed((val, key) => setText(`.cta ${key}`, val),
-  R.omit(['img-src'], siteContent['cta']))
+setTextAll((key) => `nav a:nth-child(${key[key.length - 1]})`, 'nav', ['img-src'])
+setTextAll((key) => `.cta ${key}`, 'cta', ['img-src'])
