@@ -41,4 +41,11 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-document.querySelector('h1').innerHTML = R.omit(['img-src'], siteContent['nav'])
+///////
+
+function setText(selector, content) {
+  document.querySelector(selector).textContent = content
+}
+
+R.forEachObjIndexed((val, key) => setText(`nav a:nth-child(${key[key.length - 1]})`, val),
+  R.omit(['img-src'], siteContent['nav']))
