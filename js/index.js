@@ -95,3 +95,15 @@ document.querySelector('.contact h4').textContent = siteContent['contact']['cont
 document.querySelector('.contact p:nth-of-type(1)').innerHTML = siteContent['contact']['address']
 document.querySelector('.contact p:nth-of-type(2)').textContent = siteContent['contact']['phone']
 document.querySelector('.contact p:nth-of-type(3)').textContent = siteContent['contact']['email']
+
+document.querySelector('footer p').textContent = siteContent['footer']['copyright']
+
+const lastNav = document.createElement('a')
+lastNav.textContent = 'E'
+const firstNav = document.createElement('a')
+firstNav.textContent = 'F'
+
+document.querySelector('nav').appendChild(lastNav)
+document.querySelector('nav').prepend(firstNav)
+
+document.querySelectorAll('nav a').forEach(element => element.style.color = 'green')
