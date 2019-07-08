@@ -47,22 +47,21 @@ function setText(selector, content) {
   document.querySelector(selector).textContent = content
 }
 
-function findRecur(objectTree, keyRegex) {
-  // console.log(objectTree, keyRegex)
-  // console.log(Object.keys(objectTree))
-  // console.log(keyRegex.test)
-  console.log(typeof objectTree)
-  const base = Object.keys(objectTree)
-  const temporary = base.filter(keyRegex.test)
+// function findRecur(objectTree, keyRegex) {
+//   console.log(typeof objectTree)
+//   const base = Object.keys(objectTree)
+//   const temporary = base.filter(keyRegex.test)
 
-  console.log('got this far')
-  console.log(temporary.map(keyStr => [keyStr, objectTree[keyStr]]))
-  const rest = R.forEachObjIndexed((val, key) => findRecur(val, keyRegex), objectTree)
-  return base.concat(...rest)
-}
+//   console.log('got this far')
+//   console.log(temporary.map(keyStr => [keyStr, objectTree[keyStr]]))
+//   const rest = R.forEachObjIndexed((val, key) => findRecur(val, keyRegex), objectTree)
+//   return base.concat(...rest)
+// }
 
 R.forEachObjIndexed((val, key) => setText(`nav a:nth-child(${key[key.length - 1]})`, val),
   R.omit(['img-src'], siteContent['nav']))
 
-document.querySelector('a').setAttribute('src', 'a')
-setText('h1', findRecur(siteContent, /img/))
+// document.querySelector('.cta h1').innerHTML = siteContent['cta']['h1']
+// document.querySelector('.cta button').textContent = siteContent['cta']['button']
+R.forEachObjIndexed((val, key) => setText(`.cta ${key}`, val),
+  R.omit(['img-src'], siteContent['cta']))
