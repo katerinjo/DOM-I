@@ -54,8 +54,9 @@ function setTextAll(selectFun, section, omit = []) {
 
 function setSectPic(section, data) {
   const dataKey = `${section}-img-src`
-  console.log(dataKey)
-  if (dataKey) {
+  console.log(data[dataKey])
+  if (data[dataKey]) {
+    console.log('go!')
     document.querySelector(`#${section}-img`).setAttribute('src', data[dataKey])
   }
 }
@@ -76,3 +77,21 @@ setTextAll(key => `nav a:nth-child(${key[key.length - 1]})`, 'nav', ['nav-img-sr
 setTextAll(key => `.cta ${key}`, 'cta', ['cta-img-src'])
 
 R.forEachObjIndexed((val, key) => setSectPic(key, val), siteContent)
+
+console.log('got here')
+
+document.querySelector('.main-content .top-content div:nth-child(1) h4').textContent = siteContent['main-content']['features-h4']
+document.querySelector('.main-content .top-content div:nth-child(1) p').textContent = siteContent['main-content']['features-content']
+document.querySelector('.main-content .top-content div:nth-child(2) h4').textContent = siteContent['main-content']['about-h4']
+document.querySelector('.main-content .top-content div:nth-child(2) p').textContent = siteContent['main-content']['about-content']
+document.querySelector('.main-content .bottom-content div:nth-child(1) h4').textContent = siteContent['main-content']['services-h4']
+document.querySelector('.main-content .bottom-content div:nth-child(1) p').textContent = siteContent['main-content']['services-content']
+document.querySelector('.main-content .bottom-content div:nth-child(2) h4').textContent = siteContent['main-content']['product-h4']
+document.querySelector('.main-content .bottom-content div:nth-child(2) p').textContent = siteContent['main-content']['product-content']
+document.querySelector('.main-content .bottom-content div:nth-child(3) h4').textContent = siteContent['main-content']['vision-h4']
+document.querySelector('.main-content .bottom-content div:nth-child(3) p').textContent = siteContent['main-content']['vision-content']
+
+document.querySelector('.contact h4').textContent = siteContent['contact']['contact-h4']
+document.querySelector('.contact p:nth-of-type(1)').innerHTML = siteContent['contact']['address']
+document.querySelector('.contact p:nth-of-type(2)').textContent = siteContent['contact']['phone']
+document.querySelector('.contact p:nth-of-type(3)').textContent = siteContent['contact']['email']
